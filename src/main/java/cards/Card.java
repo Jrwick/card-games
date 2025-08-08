@@ -13,6 +13,7 @@ public class Card {
     }
 
     private final Suit suit;
+    //Should I use enum for value too?
     private final int value;
 
     //Stores the string representation of the face cards.
@@ -39,6 +40,19 @@ public class Card {
     private String getFaceCard(int cardValue){
         return FACE_CARD_VALUES.get(cardValue);
     }
+
+    //returns the string reprensation of a card in short form in the format
+    //VS where V is the value of the card and S is the initial card suit.
+    public String shortForm(){
+        String str;
+        if (this.value > 1 && this.value <=10){
+            str = String.valueOf(getValue());
+        } else {
+            str = String.valueOf(getFaceCard(getValue()).charAt(0));
+        }
+        return str + suit.toString().charAt(0);
+    }
+
 
     @Override
     public String toString() {
