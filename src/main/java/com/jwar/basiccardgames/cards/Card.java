@@ -1,4 +1,4 @@
-package cards;
+package com.jwar.basiccardgames.cards;
 
 import java.util.Map;
 import java.util.Objects;
@@ -12,9 +12,15 @@ public class Card {
         SPADES
     }
 
+    public enum Colour {
+        BLACK,
+        RED
+    }
+
     private final Suit suit;
     //Should I use enum for value too?
     private final int value;
+    private final Colour colour;
 
     //Stores the string representation of the face cards.
     private static final Map<Integer, String> FACE_CARD_VALUES =
@@ -22,6 +28,13 @@ public class Card {
 
     public Card(Suit suit, int value){
         this.suit = suit;
+
+        if (suit.equals(Suit.CLUBS) || suit.equals(Suit.SPADES)){
+            this.colour = Colour.BLACK;
+        } else {
+            this.colour = Colour.RED;
+        }
+
         if (value > 0 && value <= 13){
             this.value = value;
         } else {
@@ -35,6 +48,10 @@ public class Card {
 
     public int getValue() {
         return value;
+    }
+
+    public Colour getColour() {
+        return colour;
     }
 
     private String getFaceCard(int cardValue){

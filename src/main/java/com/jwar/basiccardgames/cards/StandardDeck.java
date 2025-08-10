@@ -1,4 +1,4 @@
-package cards;
+package com.jwar.basiccardgames.cards;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,5 +49,10 @@ public class StandardDeck {
 
     public void shuffleDeck(){
         Collections.shuffle(cards);
+    }
+
+    @Override
+    public String toString() {
+        return cards.size() + " cards";
     }
 }
