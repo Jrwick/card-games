@@ -3,7 +3,7 @@ package com.jwar.basiccardgames.cards;
 import java.util.Map;
 import java.util.Objects;
 
-public class Card {
+public class Card implements Comparable<Card> {
 
     public enum Suit {
         CLUBS,
@@ -91,5 +91,14 @@ public class Card {
     @Override
     public int hashCode() {
         return Objects.hash(getSuit(), getValue());
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        int valueComparison = Integer.compare(this.getValue(),o.getValue());
+        if (valueComparison == 0){
+            return this.getSuit().compareTo(o.getSuit());
+        }
+        return valueComparison;
     }
 }

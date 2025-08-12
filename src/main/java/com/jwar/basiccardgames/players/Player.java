@@ -1,9 +1,9 @@
 package com.jwar.basiccardgames.players;
 
 import com.jwar.basiccardgames.cards.Card;
-import com.jwar.basiccardgames.decks.StandardDeck;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Player {
@@ -26,6 +26,19 @@ public class Player {
 
     public void receiveCard(Card card){
         hand.add(card);
+    }
+
+    //same as natural sort but easier to read
+    public void sortHandByValueFirst(){
+        hand.sort(
+                Comparator.comparing(Card::getValue).thenComparing(Card::getSuit)
+        );
+    }
+
+    public void sortHandBySuitFirst(){
+        hand.sort(
+                Comparator.comparing(Card::getSuit).thenComparing(Card::getValue)
+        );
     }
 
     @Override
