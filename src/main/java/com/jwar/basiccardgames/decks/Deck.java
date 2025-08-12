@@ -21,9 +21,12 @@ public abstract class Deck {
         Collections.shuffle(cards);
     }
 
-    //No validation here, what if the deck is empty
     public Card dealTopCard(){
-        return cards.removeLast();
+        if (cards.isEmpty()){
+            throw new IllegalStateException("Deck is empty");
+        } else {
+            return cards.removeLast();
+        }
     }
 
     @Override

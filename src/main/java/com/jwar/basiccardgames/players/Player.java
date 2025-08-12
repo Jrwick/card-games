@@ -24,8 +24,8 @@ public class Player {
         return name;
     }
 
-    public void addCardToHand(StandardDeck deck){
-        hand.add(deck.dealTopCard());
+    public void receiveCard(Card card){
+        hand.add(card);
     }
 
     @Override

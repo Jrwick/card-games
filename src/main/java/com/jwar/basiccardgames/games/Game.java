@@ -35,7 +35,7 @@ public abstract class Game {
 
     public void deal(Player player, int numOfCards){
         for (int i = 0; i < numOfCards; i++){
-            player.addCardToHand(this.deck);
+            player.receiveCard(deck.dealTopCard());
         }
     }
 

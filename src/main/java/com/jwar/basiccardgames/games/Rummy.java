@@ -16,7 +16,7 @@ public class Rummy extends Game {
         this.getDeck().shuffleDeck();
         initialDeal();
         currentPlayer = getFirstPlayer();
-        currentPlayer.addCardToHand(deck);
+        currentPlayer.receiveCard(deck);
     }
 
     private void initialDeal(){
