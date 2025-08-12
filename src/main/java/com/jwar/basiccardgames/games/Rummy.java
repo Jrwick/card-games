@@ -16,7 +16,7 @@ public class Rummy extends Game {
         this.getDeck().shuffleDeck();
         initialDeal();
         currentPlayer = getFirstPlayer();
-        currentPlayer.receiveCard(deck);
+        currentPlayer.receiveCard(deck.dealTopCard());
     }
 
     private void initialDeal(){
@@ -24,8 +24,6 @@ public class Rummy extends Game {
             deal(player, HAND_LIMIT);
         }
     }
-
-
 
     @Override
     public String toString() {
