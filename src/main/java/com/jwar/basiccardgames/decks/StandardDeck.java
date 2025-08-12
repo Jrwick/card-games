@@ -1,19 +1,12 @@
-package com.jwar.basiccardgames.cards;
+package com.jwar.basiccardgames.decks;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import com.jwar.basiccardgames.cards.Card;
 
-public class StandardDeck {
-    private final List<Card> cards;
+public class StandardDeck extends Deck {
 
-    public StandardDeck(){
-        cards = new ArrayList<>();
+    public StandardDeck() {
+        super();
         populateDeck();
-    }
-
-    public List<Card> getCards() {
-        return cards;
     }
 
     //Populates a standard 52-card deck
@@ -45,14 +38,5 @@ public class StandardDeck {
             }
             System.out.println(card);
         }
-    }
-
-    public void shuffleDeck(){
-        Collections.shuffle(cards);
-    }
-
-    @Override
-    public String toString() {
-        return cards.size() + " cards";
     }
 }
