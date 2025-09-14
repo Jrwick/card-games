@@ -58,7 +58,7 @@ public class Card implements Comparable<Card> {
         return FACE_CARD_VALUES.get(cardValue);
     }
 
-    //returns the string reprensation of a card in short form in the format
+    //returns the string representation of a card in short form in the format
     //VS where V is the value of the card and S is the initial card suit.
     public String shortForm(){
         String str;

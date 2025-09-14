@@ -13,12 +13,14 @@ public abstract class Game {
     protected final List<Player> players;
     protected final StandardDeck deck;
     protected final EmptyDeck discardPile;
+    protected boolean gameOver;
     protected Player currentPlayer;
 
     public Game(StandardDeck deck){
         this.deck = deck;
         this.players = new ArrayList<>();
         this.discardPile = new EmptyDeck();
+        this.gameOver = false;
     }
 
     public List<Player> getPlayers() {
